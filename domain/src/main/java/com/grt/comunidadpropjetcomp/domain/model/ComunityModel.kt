@@ -15,5 +15,8 @@ data class ComunityModel(
     var instalaciones:String?=null,
     var mantenimiento:String?=null,
     var obras:String?=null,
-    var respeto:String?=null
+    var respeto:String?=null,
+    var lat:String?=null,
+    var lng:String?=null,
+    var direccion:String?=null
 )
