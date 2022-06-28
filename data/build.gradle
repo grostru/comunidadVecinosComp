@@ -66,8 +66,6 @@ dependencies {
     //Compose
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:1.0.0-rc01"
-    implementation "androidx.compose.ui:ui-tooling-preview:1.0.0-rc01"
     implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
     //Firebase
     implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
