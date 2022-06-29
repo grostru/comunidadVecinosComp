@@ -105,6 +105,7 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                 )
             }
 
+            // Texto Instalaciones
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -127,6 +128,7 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                 )
             }
 
+            // Texto Mantenimiento
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -148,6 +150,8 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                     color = colorResource(id = R.color.teal_700)
                 )
             }
+
+            // Texto Contribucion
             Spacer(modifier = Modifier.size(8.dp))
             Row(
                 modifier = Modifier
@@ -170,6 +174,8 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                     color = colorResource(id = R.color.teal_700)
                 )
             }
+
+            // Texto Respeto
             Spacer(modifier = Modifier.size(8.dp))
             Row(
                 modifier = Modifier
@@ -192,7 +198,7 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                     text = respeto,
                     color = colorResource(id = R.color.teal_700)
                 )
-
+            }
                 Spacer(modifier = Modifier.size(8.dp))
                 Row(
                     modifier = Modifier
@@ -210,13 +216,13 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                     )
                     Text(
                         modifier = Modifier
-                            .padding(8.dp),
+                            .padding(start = 8.dp, top = 8.dp, bottom = 40.dp, end = 8.dp),
                         text = obras,
                         color = colorResource(id = R.color.teal_700)
                     )
                 }
                 //ArtistCard()
-            }
+
         }
     }
 }

@@ -53,7 +53,7 @@ fun Splash(){
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Comunidad de Propietarios El Mayeto",
+            text = "Tu Comunidad de Propietarios",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
@@ -61,7 +61,7 @@ fun Splash(){
         Spacer(modifier = Modifier.size(16.dp))
         Image(
             painter = painterResource(id = R.drawable.ic_logo),
-            contentDescription = "Logo Comunidad El Mayeto",
+            contentDescription = "Logo Comunidad",
             modifier = Modifier.size(150.dp, 150.dp)
         )
         Text(

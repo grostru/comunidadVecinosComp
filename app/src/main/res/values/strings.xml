@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">comunidadPropJetComp</string>
+    <string name="app_name">Tu Comunidad de Propietarios</string>
+
+    <!-- Fcm -->
+    <string name="notification_channel_id_default">general</string>
+    <string name="notification_channel_name_default">Generales</string>
 </resources>

@@ -49,13 +49,16 @@ fun InfoScreen(
 ){
     val uiState = viewModel.uiComunity
     val name = uiState.name?:""
+    val lat = uiState.lat?:""
+    val lng = uiState.lng?:""
+    val direccion = uiState.direccion?:""
 
-    PreviewInfo(navController,name)
+    PreviewInfo(navController,name, direccion, lat, lng)
 
 }
 
 @Composable
-fun PreviewInfo(navController: NavHostController, name: String) {
+fun PreviewInfo(navController: NavHostController, name: String, direccion:String, lat:String, lng:String) {
     Scaffold(
         topBar = { TopBar(name!!) },
         bottomBar = { BottomNavigationBar(navController) }
@@ -68,37 +71,25 @@ fun PreviewInfo(navController: NavHostController, name: String) {
                 .background(Teal700)
                 .padding(16.dp),
         ) {
+            Text(
+                text = "Comunidad ${name}",
+                fontSize = 30.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                text = direccion,
+                fontSize = 20.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
 
-
-                Image(painter = painterResource(id = R.drawable.ic_hoja), contentDescription = "")
-
-                Text(
-                        text = name,
-                        fontSize = 30.sp,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
-                    )
-
-                MapScreen()
-
+            MapScreen(lat, lng, name)
         }
     }
 }
-
-    @Composable
-    fun MapScreen(){
-        val context = LocalContext.current
-        GoogleMap(modifier = Modifier.fillMaxSize(),
-            uiSettings = MapUiSettings(zoomControlsEnabled = true),
-            cameraPositionState = CameraPositionState(
-                CameraPosition(LatLng(36.63052, -6.36283),15f, 0f, 0f)
-            )
-        ){
-
-        }
-
-    }
 
 
 
