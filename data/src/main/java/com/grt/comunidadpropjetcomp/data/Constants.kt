@@ -3,11 +3,12 @@ package com.grt.comunidadpropjetcomp.data
 /**
  * Created por Gema Rosas Trujillo
  * 24/03/2022
- *
  */
 object Constants {
 
     const val COLL_COMUNITYS = "comunitys"
+    const val COLL_TABLON = "tablon"
+    const val FECHA = "fecha"
 
     //FCM
     const val PROP_TOKEN = "token"

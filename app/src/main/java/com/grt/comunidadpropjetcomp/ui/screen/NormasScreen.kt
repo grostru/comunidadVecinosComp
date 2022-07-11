@@ -1,30 +1,24 @@
 package com.grt.comunidadpropjetcomp.ui.screen
 
 import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.grt.comunidadpropjetcomp.R
-import com.grt.comunidadpropjetcomp.domain.model.Response
 import com.grt.comunidadpropjetcomp.navigation.BottomNavigationBar
-import com.grt.comunidadpropjetcomp.ui.loginComunity.LoginComunityViewModel
-import com.grt.comunidadpropjetcomp.ui.theme.Teal700
+import com.grt.comunidadpropjetcomp.ui.loginComunity.ComunityViewModel
 
 /**
  * Created por Gema Rosas Trujillo
@@ -37,7 +31,7 @@ import com.grt.comunidadpropjetcomp.ui.theme.Teal700
 fun NormasScreen(
     context: Context,
     navController: NavHostController,
-    viewModel: LoginComunityViewModel = hiltViewModel()
+    viewModel: ComunityViewModel = hiltViewModel()
 ){
 
     val uiState = viewModel.uiComunity
@@ -216,7 +210,7 @@ fun Greeting(navController: NavHostController, name: String, estatutos:String, i
                     )
                     Text(
                         modifier = Modifier
-                            .padding(start = 8.dp, top = 8.dp, bottom = 40.dp, end = 8.dp),
+                            .padding(start = 8.dp, top = 8.dp, bottom = 70.dp, end = 8.dp),
                         text = obras,
                         color = colorResource(id = R.color.teal_700)
                     )

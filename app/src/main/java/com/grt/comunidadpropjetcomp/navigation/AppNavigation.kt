@@ -6,7 +6,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.grt.comunidadpropjetcomp.ui.loginComunity.LoginComunityViewModel
+import com.grt.comunidadpropjetcomp.ui.loginComunity.ComunityViewModel
 import com.grt.comunidadpropjetcomp.ui.screen.*
 
 /**
@@ -18,7 +18,7 @@ import com.grt.comunidadpropjetcomp.ui.screen.*
 fun AppNavigation(context: Context) {
 
     val navController = rememberNavController()
-    val viewModel = hiltViewModel<LoginComunityViewModel>()
+    val viewModel = hiltViewModel<ComunityViewModel>()
 
     NavHost(
         navController = navController,

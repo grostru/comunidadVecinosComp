@@ -7,12 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.grt.comunidadpropjetcomp.navigation.AppNavigation
-import com.grt.comunidadpropjetcomp.ui.loginComunity.LoginComunityViewModel
 import com.grt.comunidadpropjetcomp.ui.theme.ComunidadPropJetCompTheme
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

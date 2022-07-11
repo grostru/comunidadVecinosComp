@@ -1,14 +1,12 @@
 package com.grt.comunidadpropjetcomp.ui.screen
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
@@ -24,10 +22,10 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.grt.comunidadpropjetcomp.R
+import com.grt.comunidadpropjetcomp.data.UtilsComunity
 import com.grt.comunidadpropjetcomp.domain.model.Response
-import com.grt.comunidadpropjetcomp.navigation.AppScreens
 import com.grt.comunidadpropjetcomp.navigation.NavigationItem
-import com.grt.comunidadpropjetcomp.ui.loginComunity.LoginComunityViewModel
+import com.grt.comunidadpropjetcomp.ui.loginComunity.ComunityViewModel
 import com.grt.comunidadpropjetcomp.ui.theme.Teal700
 
 /**
@@ -41,7 +39,7 @@ import com.grt.comunidadpropjetcomp.ui.theme.Teal700
 fun MainScreen(
     context: Context,
     navController: NavHostController,
-    viewModel: LoginComunityViewModel = hiltViewModel()
+    viewModel: ComunityViewModel = hiltViewModel()
 ){
 
     Scaffold(
@@ -52,10 +50,9 @@ fun MainScreen(
                 is Response.Success -> {
                     val comunity = booksResponse.data
                     if (comunity != null) {
-
                         LaunchedEffect(comunity){
                             viewModel.isLoadingComunity(comunity)
-                            navController.navigate(NavigationItem.Info.route)
+                            navController.navigate(NavigationItem.Interes.route)
                         }
 
                         Toast.makeText(context, "La Comunidad es correcta", Toast.LENGTH_LONG).show()
@@ -73,6 +70,18 @@ fun MainScreen(
                     Toast.LENGTH_LONG
                 ).show()
             }
+
+            when (val tablonResponse = viewModel.tablonListState.value) {
+                is Response.Loading -> ProgressBar()
+                is Response.Success -> LazyColumn(
+                    modifier = Modifier.fillMaxSize().padding(padding)
+                ) {
+                    viewModel.isLoadingTablon(tablonResponse.data)
+                }
+                is Error -> tablonResponse.message?.let { UtilsComunity.printError(it) }
+            }
+
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -138,6 +147,7 @@ fun MainScreen(
                         .padding(top = 16.dp),
                     onClick = {
                         viewModel.getComunity(idComunity)
+                        viewModel.getTablon(idComunity)
                     },
                     // Uses ButtonDefaults.ContentPadding by default
                     contentPadding = PaddingValues(

@@ -18,5 +18,12 @@ data class ComunityModel(
     var respeto:String?=null,
     var lat:String?=null,
     var lng:String?=null,
-    var direccion:String?=null
+    var direccion:String?=null,
+    var phonePresident:String?=null,
+    var namePresident:String?=null,
+    var phoneAdministrator:String?=null,
+    var nameAdministrator:String?=null,
+    var direccionAdministrator:String?=null,
+    var latAdmin:String?=null,
+    var lngAdmin:String?=null
 )

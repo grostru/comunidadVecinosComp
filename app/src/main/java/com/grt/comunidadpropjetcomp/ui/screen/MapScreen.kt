@@ -5,6 +5,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.*
@@ -18,10 +19,9 @@ import com.google.maps.android.compose.*
 
 @Composable
 fun MapScreen(lat:String, lng:String, name:String){
-    val context = LocalContext.current
     val latLng = LatLng(lat.toDouble(), lng.toDouble())
 
-    GoogleMap(modifier = Modifier.fillMaxSize(),
+    GoogleMap(modifier = Modifier.fillMaxWidth().height(300.dp),
         uiSettings = MapUiSettings(zoomControlsEnabled = true),
         cameraPositionState = CameraPositionState(
             CameraPosition(latLng,15f, 0f, 0f)

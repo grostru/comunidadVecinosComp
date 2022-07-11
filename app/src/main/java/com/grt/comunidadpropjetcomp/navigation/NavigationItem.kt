@@ -9,5 +9,5 @@ import com.grt.comunidadpropjetcomp.R
 sealed class NavigationItem(var route: String, var icon: Int, var title: String) {
     object Info : NavigationItem("info", R.drawable.ic_informacion, "Información")
     object Normas : NavigationItem("normas", R.drawable.ic_hoja, "Normas")
-    object Interes : NavigationItem("deInteres", R.drawable.ic_carpeta, "De Interés")
+    object Interes : NavigationItem("deInteres", R.drawable.ic_carpeta, "Tablón de Anuncios")
 }
